@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>Mazda CX-5 e-Skyactiv desde 179€/mes | Kuroba Motor</title>
+<style>
+  :root{
+    --navy:#0b2036;
+    --navy-2:#16385c;
+    --accent:#e63946;
+    --accent-dark:#c62836;
+    --text:#1a1f27;
+    --muted:#6b7280;
+    --border:#e7e9ee;
+    --bg:#ffffff;
+    --soft:#f6f7fa;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  html,body{margin:0;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    max-width:480px;
+    margin:0 auto;
+    padding-bottom:90px; /* espacio para la barra fija de llamada */
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ---------- Cabecera ---------- */
+  header{
+    position:sticky;top:0;z-index:20;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:10px;
+    padding:12px 14px;
+    background:#fff;
+    border-bottom:1px solid var(--border);
+    box-shadow:0 2px 10px rgba(11,32,54,.05);
+  }
+  .brand{display:flex;align-items:center;gap:9px;min-width:0;}
+  .brand .logo{
+    position:relative;
+    width:36px;height:36px;flex:none;
+    background:var(--navy);
+    border-radius:50%;
+    overflow:hidden;
+  }
+  .brand .logo svg{position:absolute;inset:0;width:100%;height:100%;padding:7px;}
+  .brand .logo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+  .brand .names{min-width:0;line-height:1.2;}
+  .brand .names .main{font-weight:800;font-size:.82rem;letter-spacing:.3px;white-space:nowrap;color:var(--navy);}
+  .brand .names .sub{font-size:.63rem;color:var(--muted);white-space:nowrap;}
+  .head-actions{display:flex;gap:16px;flex:none;}
+  .head-actions a{
+    display:flex;flex-direction:column;align-items:center;gap:3px;
+    font-size:.62rem;color:var(--navy);text-decoration:none;font-weight:600;
+  }
+  .head-actions svg{width:18px;height:18px;}
+
+  /* ---------- Contenido ---------- */
+  main{padding:16px;}
+
+  .eyebrow{
+    display:flex;align-items:center;gap:8px;
+    margin:2px 0 10px;
+  }
+  .modelo-titulo{font-size:.92rem;font-weight:800;letter-spacing:.4px;color:var(--navy);}
+  .badge{
+    display:inline-flex;align-items:center;gap:7px;
+    background:rgba(11,32,54,.06);color:var(--navy);
+    border:1px solid rgba(11,32,54,.16);
+    font-size:.72rem;font-weight:700;letter-spacing:.1px;
+    padding:7px 13px;border-radius:8px;
+    margin-bottom:16px;
+  }
+  .badge svg{width:15px;height:15px;flex:none;stroke:var(--navy);}
+
+  .hero-img{
+    position:relative;
+    width:100%;
+    aspect-ratio:16/10;
+    border-radius:16px;
+    background:linear-gradient(135deg,#e2e6eb,#c3cad3);
+    overflow:hidden;
+    margin-bottom:18px;
+    box-shadow:0 10px 24px rgba(11,32,54,.12);
+  }
+  .hero-img .ph-text{
+    position:absolute;inset:0;
+    display:flex;align-items:center;justify-content:center;
+    text-align:center;color:#5a6472;font-size:.78rem;line-height:1.4;
+    padding:20px;
+  }
+  .hero-img img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block;}
+
+  .price-block{
+    display:flex;align-items:baseline;gap:8px;
+    margin:4px 0 4px;
+  }
+  .price-value{font-size:2.5rem;font-weight:800;color:var(--navy);line-height:1;}
+  .price-unit{font-size:1.1rem;font-weight:700;color:var(--navy);}
+  .price-flex{font-size:.8rem;color:var(--muted);font-weight:600;margin-bottom:6px;}
+  .modelo-full{
+    font-size:.9rem;
+    line-height:1.45;
+    color:var(--text);
+    margin:0 0 14px;
+    font-weight:500;
+  }
+
+  details.info-toggle{
+    margin-bottom:14px;
+    border:1px solid var(--border);
+    border-radius:10px;
+    background:var(--soft);
+    overflow:hidden;
+  }
+  details.info-toggle summary{
+    list-style:none;
+    cursor:pointer;
+    padding:11px 14px;
+    font-size:.78rem;
+    font-weight:600;
+    color:var(--navy);
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  details.info-toggle summary::-webkit-details-marker{display:none;}
+  details.info-toggle summary::after{content:"+";font-size:1rem;color:var(--muted);}
+  details.info-toggle[open] summary::after{content:"–";}
+  details.info-toggle .info-body{
+    font-size:.68rem;
+    line-height:1.55;
+    color:var(--muted);
+    padding:0 14px 14px;
+  }
+  details.info-toggle .info-body b{color:var(--text);}
+
+  .cta-secundaria{
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    text-align:center;
+    background:linear-gradient(135deg,var(--navy),var(--navy-2));
+    color:#fff;
+    text-decoration:none;
+    font-weight:700;
+    font-size:.95rem;
+    padding:15px;
+    border-radius:12px;
+    margin-bottom:26px;
+    box-shadow:0 8px 18px rgba(11,32,54,.22);
+  }
+  .cta-secundaria svg{width:18px;height:18px;}
+
+  /* ---------- Formulario ---------- */
+  .form-card{
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:20px;
+    margin-bottom:22px;
+    box-shadow:0 6px 20px rgba(11,32,54,.06);
+  }
+  .form-card h2{
+    font-size:1.02rem;
+    margin:0 0 4px;
+    color:var(--navy);
+  }
+  .form-card .sub{font-size:.8rem;color:var(--muted);margin:0 0 18px;}
+  .field{display:flex;flex-direction:column;margin-bottom:13px;}
+  label{font-size:.78rem;font-weight:600;margin-bottom:6px;color:var(--navy);}
+  input, textarea{
+    padding:12px 13px;
+    border:1px solid var(--border);
+    border-radius:9px;
+    font-size:.95rem;
+    font-family:inherit;
+    width:100%;
+    background:#fff;
+  }
+  input:focus, textarea:focus{
+    outline:none;border-color:var(--navy-2);
+    box-shadow:0 0 0 3px rgba(22,56,92,.12);
+  }
+  textarea{resize:vertical;min-height:64px;}
+  .consent{
+    display:flex;gap:8px;align-items:flex-start;
+    font-size:.72rem;color:var(--muted);margin:6px 0 18px;
+  }
+  .consent input{width:auto;margin-top:3px;flex:none;}
+  .consent a{color:var(--navy);}
+  button{
+    width:100%;padding:15px;border:none;border-radius:10px;
+    background:var(--accent);color:#fff;font-size:1rem;font-weight:700;cursor:pointer;
+    box-shadow:0 8px 18px rgba(230,57,70,.28);
+  }
+  button:active{background:var(--accent-dark);}
+  button:disabled{background:#c9c9c9;box-shadow:none;}
+  .error-msg{
+    display:none;background:#fdecea;color:#b3261e;border:1px solid #f5c2c0;
+    border-radius:8px;padding:10px 12px;font-size:.8rem;margin-bottom:14px;
+  }
+  .success{display:none;text-align:center;padding:26px 8px;}
+  .success .icon{
+    width:50px;height:50px;border-radius:50%;background:#2e7d32;color:#fff;
+    display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin:0 auto 14px;
+  }
+  .success h2{margin:0 0 6px;color:var(--navy);font-size:1.02rem;}
+  .success p{color:var(--muted);font-size:.85rem;margin:0;}
+
+  /* ---------- Barra fija de llamada ---------- */
+  .call-bar{
+    position:fixed;bottom:0;left:0;right:0;
+    max-width:480px;margin:0 auto;
+    background:var(--accent);
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    padding:15px 14px calc(15px + env(safe-area-inset-bottom));
+    text-decoration:none;
+    color:#fff;font-weight:700;font-size:.95rem;
+    box-shadow:0 -4px 16px rgba(0,0,0,.18);
+  }
+  .call-bar svg{width:18px;height:18px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">
+    <div class="logo">
+      <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <ellipse cx="100" cy="100" rx="86" ry="66" stroke="#fff" stroke-width="11"/>
+        <path d="M38,82 C70,82 88,118 100,150 C112,118 130,82 162,82" stroke="#fff" stroke-width="11" stroke-linecap="round" fill="none"/>
+      </svg>
+      <!-- Sustituye mazda-logo.png por el archivo real; si no existe, se ve el logo dibujado de arriba -->
+      <img src="mazda-logo.png" alt="Mazda" onload="this.previousElementSibling.style.display='none'" onerror="this.style.display='none'">
+    </div>
+    <div class="names">
+      <div class="main">KUROBA MOTOR</div>
+      <div class="sub">Concesionario Oficial Mazda</div>
+    </div>
+  </div>
+  <div class="head-actions">
+    <a href="https://maps.google.com/?q=C.%20Bastidor%2C%2028914%20Legan%C3%A9s%2C%20Madrid" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.1-7-11a7 7 0 1114 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+      ¿Dónde estamos?
+    </a>
+    <a href="tel:+34914987003">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L8 10a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7a2 2 0 011.7 2z"/></svg>
+      Llámanos
+    </a>
+  </div>
+</header>
+
+<main>
+  <div class="eyebrow">
+    <span class="modelo-titulo">MAZDA CX-5 E-SKYACTIV</span>
+  </div>
+  <span class="badge">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+    Con 3 mantenimientos incluidos
+  </span>
+
+  <div class="hero-img">
+    <span class="ph-text">Sustituye este recuadro por la foto del Mazda CX-5<br>(archivo mazda-cx5-kuroba.jpg)</span>
+    <img src="mazda-cx5-kuroba.jpg" alt="Mazda CX-5" onerror="this.style.display='none'">
+  </div>
+
+  <div class="price-block">
+    <span class="price-value">179€</span>
+    <span class="price-unit">/mes</span>
+  </div>
+  <div class="price-flex">con FlexiOpción¹</div>
+  <p class="modelo-full">Mazda CX-5 2.5 e-Skyactiv-G MHEV Prime-Line FWD Aut.</p>
+
+  <details class="info-toggle">
+    <summary>Ver condiciones de financiación</summary>
+    <div class="info-body">
+      Financiación de CX-5 2.5 e-Skyactiv-G MHEV Prime-Line FWD Aut. Precio al contado <b>32.990,00 €</b>. Precio financiando 31.990,00 €. Entrada 7.908,65 €. Plazo 36 meses, 1 cuota de 163,56 €, 34 cuotas de <b>179,00 €</b> y 1 cuota de 22.328,20 € (máximo 30.000 km). Tipo Deudor 6,49% T.A.E. 7,95% (La T.A.E., así como la primera cuota podrá variar ligeramente en función del día de la firma del contrato y de la fecha de pago de las cuotas). Comisión de Apertura 3,00 % 722,44 € Contado. Intereses 4.496,41 €, Importe total del Crédito 24.081,35 €, Coste Total del Crédito 5.218,85 €, Importe Total Adeudado 29.300,20 €, Precio Total a Plazos 37.208,85 €. Siendo el día de la contratación 09/08/2026 y primer pago el 02/09/2026. Oferta válida hasta el 30/09/2026. Sistema de amortización Francés. Financiación ofrecida, sujeta a estudio y aprobación por parte de Open Bank, S.A.
+    </div>
+  </details>
+
+  <a class="cta-secundaria" href="tel:+34914987003">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L8 10a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7a2 2 0 011.7 2z"/></svg>
+    Llamar ahora al concesionario
+  </a>
+
+  <div class="form-card">
+    <div id="successMsg" class="success">
+      <div class="icon">&#10003;</div>
+      <h2>¡Gracias! Hemos recibido tu solicitud</h2>
+      <p>Un asesor de Kuroba Motor te llamará en breve.</p>
+    </div>
+
+    <div id="formWrap">
+      <h2>Solicita información de esta oferta</h2>
+      <p class="sub">Te llamamos y sin compromiso.</p>
+
+      <form id="leadForm" target="hidden_iframe">
+        <div id="errorMsg" class="error-msg">No se ha podido enviar el formulario. Vuelve a intentarlo.</div>
+
+        <div class="field">
+          <label for="nombre">Nombre *</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+
+        <div class="field">
+          <label for="telefono">Teléfono *</label>
+          <input type="tel" id="telefono" name="telefono" required pattern="[0-9+\s]{9,15}">
+        </div>
+
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email">
+        </div>
+
+        <div class="field">
+          <label for="comentario">Comentario</label>
+          <textarea id="comentario" name="comentario" placeholder="Opcional"></textarea>
+        </div>
+
+        <label class="consent">
+          <input type="checkbox" id="consentimiento" name="consentimiento" value="Aceptado" required>
+          <span>Acepto el tratamiento de mis datos según se describe en la información legal indicada más abajo. *</span>
+        </label>
+
+        <!-- Campos ocultos: oferta y tracking de la campaña de Google Ads -->
+        <input type="hidden" name="oferta" value="Mazda CX-5 e-Skyactiv - Kuroba Motor">
+        <input type="hidden" name="gclid" id="gclid">
+        <input type="hidden" name="utm_source" id="utm_source">
+        <input type="hidden" name="utm_medium" id="utm_medium">
+        <input type="hidden" name="utm_campaign" id="utm_campaign">
+        <input type="hidden" name="utm_term" id="utm_term">
+        <input type="hidden" name="utm_content" id="utm_content">
+        <input type="hidden" name="pagina" id="pagina">
+        <input type="hidden" name="referrer" id="referrer">
+
+        <button type="submit" id="submitBtn">Solicitar información</button>
+      </form>
+    </div>
+  </div>
+
+  <details class="info-toggle">
+    <summary>Información legal y protección de datos</summary>
+    <div class="info-body">
+      Al enviar este formulario aceptas el tratamiento de tus datos por Mazda Automóviles España S.A. y por el concesionario que hayas elegido para gestionar su solicitud. Se le contactará por llamada, SMS, WhatsApp, e-mail y/o cualquier otro medio de mensajería instantánea. *Al marcar esta casilla, aceptas que Mazda Automóviles España, S.A. use tus datos para todos y cada uno de los siguientes fines: la elaboración de perfiles comerciales y la realización -por cualquier medio: llamada, SMS, WhatsApp, e-mail y/o cualquier otro medio de mensajería instantánea- de labores comerciales relacionadas con promociones, vehículos y/o servicios prestados por Mazda o su red de concesionarios. Asimismo, aceptas que tus datos sean cedidos para la misma finalidad a las empresas de grupo. Derechos: Si deseas ejercer tus derechos de acceso, rectificación, suspensión, oposición y cualquier otro derecho que te corresponda en relación con tus datos, contacta con nosotros por correo postal: Mazda Automóviles España. C/Manuel Pombo Angulo 28, 2º planta- 28050 Madrid, o por email: <a href="mailto:privacidad@mazdaeur.com">privacidad@mazdaeur.com</a>. Para más información sobre la Protección de Datos de Mazda Automóviles España clica aquí. -&gt; <a href="https://www.mazda.es/privacidad/" target="_blank" rel="noopener">https://www.mazda.es/privacidad/</a> Le recordamos que puede retirar o modificar sus opciones de consentimiento respecto de cookies y tecnologías similares en el centro de preferencias de privacidad, así como consultar la política de privacidad vigente.
+    </div>
+  </details>
+</main>
+
+<a class="call-bar" href="tel:+34914987003">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L8 10a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7a2 2 0 011.7 2z"/></svg>
+  Llamar ahora
+</a>
+
+<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
+
+<script>
+  // ======================================================================
+  // Sustituye por la URL de tu Web App de Google Apps Script (ver
+  // google-apps-script-leads.gs). Debe terminar en /exec
+  // ======================================================================
+  var APPS_SCRIPT_URL = "PON_AQUI_TU_URL_DE_APPS_SCRIPT";
+
+  var form = document.getElementById('leadForm');
+  var iframe = document.getElementById('hidden_iframe');
+  var submitBtn = document.getElementById('submitBtn');
+  var errorMsg = document.getElementById('errorMsg');
+  var submitted = false;
+  var iframeLoadCount = 0;
+
+  var params = new URLSearchParams(window.location.search);
+  ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid'].forEach(function(key){
+    var el = document.getElementById(key);
+    if (el) el.value = params.get(key) || '';
+  });
+  document.getElementById('pagina').value = window.location.href;
+  document.getElementById('referrer').value = document.referrer || '';
+
+  form.addEventListener('submit', function(e){
+    if (!APPS_SCRIPT_URL || APPS_SCRIPT_URL.indexOf('http') !== 0) {
+      e.preventDefault();
+      errorMsg.style.display = 'block';
+      return;
+    }
+    form.action = APPS_SCRIPT_URL;
+    form.method = 'POST';
+    submitted = true;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando...';
+  });
+
+  iframe.addEventListener('load', function(){
+    iframeLoadCount++;
+    if (submitted && iframeLoadCount > 1) {
+      document.getElementById('formWrap').style.display = 'none';
+      document.getElementById('successMsg').style.display = 'block';
+    }
+  });
+</script>
+</body>
+</html>
