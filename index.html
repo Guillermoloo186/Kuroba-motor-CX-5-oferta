@@ -366,7 +366,6 @@
   var submitBtn = document.getElementById('submitBtn');
   var errorMsg = document.getElementById('errorMsg');
   var submitted = false;
-  var iframeLoadCount = 0;
 
   var params = new URLSearchParams(window.location.search);
   ['utm_source','utm_medium','utm_campaign','utm_term','utm_content','gclid'].forEach(function(key){
@@ -390,8 +389,8 @@
   });
 
   iframe.addEventListener('load', function(){
-    iframeLoadCount++;
-    if (submitted && iframeLoadCount > 1) {
+    if (submitted) {
+      submitted = false;
       document.getElementById('formWrap').style.display = 'none';
       document.getElementById('successMsg').style.display = 'block';
     }
