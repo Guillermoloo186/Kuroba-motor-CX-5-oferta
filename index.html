@@ -4,6 +4,55 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 <title>Mazda CX-5 e-Skyactiv desde 179€/mes | Kuroba Motor</title>
+
+<!-- ====================================================================
+     Google tag (gtag.js) — Google Ads AW-822739106
+     ==================================================================== -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-822739106"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-822739106');
+
+  // --------------------------------------------------------------
+  // CONVERSIÓN 1 — Clic en cualquier enlace de teléfono
+  // Acción de conversión: "Conversión Contacto Teléfono"
+  // --------------------------------------------------------------
+  function gtag_report_llamada(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') { window.location = url; }
+    };
+    gtag('event', 'conversion', {
+      'send_to': 'AW-822739106/XVpDCMPY--AcEKKBqIgD',
+      'value': 1.0,
+      'currency': 'EUR',
+      'event_callback': callback
+    });
+    return false;
+  }
+
+  // --------------------------------------------------------------
+  // CONVERSIÓN 2 — Envío correcto del formulario
+  //
+  // PENDIENTE: crear en Google Ads una acción de conversión nueva
+  // para el formulario y pegar su etiqueta abajo, sustituyendo
+  // PEGAR_ETIQUETA_FORMULARIO.
+  // Mientras el valor siga sin sustituir, la función no envía nada
+  // (evita registrar conversiones contra una etiqueta inválida).
+  // --------------------------------------------------------------
+  var ETIQUETA_FORMULARIO = 'PEGAR_ETIQUETA_FORMULARIO';
+
+  function gtag_report_formulario() {
+    if (ETIQUETA_FORMULARIO.indexOf('PEGAR_') === 0) { return; }
+    gtag('event', 'conversion', {
+      'send_to': 'AW-822739106/' + ETIQUETA_FORMULARIO,
+      'value': 1.0,
+      'currency': 'EUR'
+    });
+  }
+</script>
+
 <style>
   :root{
     --navy:#0b2036;
@@ -88,11 +137,12 @@
     margin-bottom:18px;
     box-shadow:0 10px 24px rgba(11,32,54,.12);
   }
+  /* Rótulo de respaldo: sólo se ve si la foto no carga. Sin texto de instrucciones. */
   .hero-img .ph-text{
     position:absolute;inset:0;
     display:flex;align-items:center;justify-content:center;
-    text-align:center;color:#5a6472;font-size:.78rem;line-height:1.4;
-    padding:20px;
+    text-align:center;color:#8a95a3;font-size:.9rem;font-weight:700;
+    letter-spacing:.5px;padding:20px;
   }
   .hero-img img{position:relative;z-index:1;width:100%;height:100%;object-fit:cover;display:block;}
 
@@ -244,7 +294,7 @@
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s-7-6.1-7-11a7 7 0 1114 0c0 4.9-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
       ¿Dónde estamos?
     </a>
-    <a href="tel:+34914987003">
+    <a href="tel:+34914987003" onclick="return gtag_report_llamada('tel:+34914987003');">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L8 10a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7a2 2 0 011.7 2z"/></svg>
       Llámanos
     </a>
@@ -261,8 +311,8 @@
   </span>
 
   <div class="hero-img">
-    <span class="ph-text">Sustituye este recuadro por la foto del Mazda CX-5<br>(archivo mazda-cx5-kuroba.jpg)</span>
-    <img src="mazda-cx5-kuroba.jpg" alt="Mazda CX-5" onerror="this.style.display='none'">
+    <span class="ph-text">MAZDA CX-5</span>
+    <img src="mazda-cx5-kuroba.jpg" alt="Mazda CX-5 e-Skyactiv en Kuroba Motor" onerror="this.style.display='none'">
   </div>
 
   <div class="price-block">
@@ -279,7 +329,7 @@
     </div>
   </details>
 
-  <a class="cta-secundaria" href="tel:+34914987003">
+  <a class="cta-secundaria" href="tel:+34914987003" onclick="return gtag_report_llamada('tel:+34914987003');">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L8 10a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7a2 2 0 011.7 2z"/></svg>
     Llamar ahora al concesionario
   </a>
@@ -347,7 +397,7 @@
   </details>
 </main>
 
-<a class="call-bar" href="tel:+34914987003">
+<a class="call-bar" href="tel:+34914987003" onclick="return gtag_report_llamada('tel:+34914987003');">
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3.1 19.5 19.5 0 01-6-6A19.8 19.8 0 012.1 4.2 2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 2 .7 2.9a2 2 0 01-.5 2.1L8 10a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.5c.9.3 1.9.6 2.9.7a2 2 0 011.7 2z"/></svg>
   Llamar ahora
 </a>
@@ -393,6 +443,10 @@
       submitted = false;
       document.getElementById('formWrap').style.display = 'none';
       document.getElementById('successMsg').style.display = 'block';
+
+      // Conversión de formulario: se dispara sólo cuando el envío
+      // ha llegado bien y se muestra el mensaje de gracias.
+      gtag_report_formulario();
     }
   });
 </script>
